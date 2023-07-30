@@ -32,8 +32,8 @@ const Home = () => {
    * Setting posts to RTK when the data is available
    */
   useEffect(() => {
-    dispatch(setPosts(data));
-  }, [data]);
+    if (data) dispatch(setPosts(data));
+  }, [data, dispatch]);
 
   /**
    * Display error when the request is failed
