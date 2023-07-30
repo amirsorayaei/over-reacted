@@ -28,4 +28,15 @@ yarn dev
 
 5. Access the application in your browser at `https://localhost:3000`
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Technologies
+This project uses the following technologies:
+
+[Redux Toolkit](https://redux-toolkit.js.org/) - State management toolset for efficient development.
+
+[Styled Components](https://styled-components.com/) - For using actual CSS to style components by writing JavaScript code.
+
+[TypeScript](https://www.typescriptlang.org/) - Typed programming language that gives you better tooling at any scale.
+
+[ESlint](https://eslint.org/) - For improving code quality.
+
+[Yarn](https://yarnpkg.com/) - For dependencies management.
