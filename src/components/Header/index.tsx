@@ -66,7 +66,7 @@ const Header = () => {
 
   return (
     <HeaderContainer>
-      <Title color={titleColor} fontSize={titleFontSize}>
+      <Title color={titleColor} style={{ fontSize: titleFontSize }}>
         <Link href="/">{"Overreacted"}</Link>
       </Title>
       <Switch

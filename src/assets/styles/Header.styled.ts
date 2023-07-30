@@ -18,8 +18,7 @@ export const IconWrapper = styled.div`
   height: 100%;
 `;
 
-export const Title = styled.span`
-  font-size: ${(props) => props.fontSize};
+export const Title = styled.h1`
   color: ${({ theme, ...props }) => props.color || theme.colors.textTitle};
   font-weight: bold;
 `;
