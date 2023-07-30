@@ -11,7 +11,6 @@ import {
   Title,
 } from "@/src/assets/styles/Post.styled";
 import { Post } from "@/src/types/types";
-import { generateDateById } from "@/src/helpers/Functions";
 
 /**
  * Post details
@@ -50,7 +49,7 @@ const PostDetails = ({ postId }: { postId: number }) => {
   return (
     <div>
       <Title>{postDetails.title}</Title>
-      <Date>{generateDateById(postDetails.id)}</Date>
+      <Date>{postDetails.date}</Date>
       <Body>{postDetails.body}</Body>
     </div>
   );

@@ -1,3 +1,5 @@
+import { Post } from "../types/types";
+
 /**
  * Generate random date by post id
  *
@@ -21,7 +23,21 @@ export const generateDateById = (id?: number): string => {
    */
   const dateFormat = `${date.toLocaleString("en", {
     month: "short",
-  })} ${date.getDay()}, ${date.getFullYear()}`;
+  })} ${date.getDate()}, ${date.getFullYear()}`;
 
   return dateFormat;
+};
+
+/**
+ * Turn your strings into dates, and then subtract them
+ * to get a value that is either negative, positive, or zero.
+ * @param {Post[]} posts
+ * @returns {Post[]}
+ */
+export const sortByDate = (posts: Post[]): Post[] => {
+  posts.sort(function (a, b) {
+    return new Date(b.date).getTime() - new Date(a.date).getTime();
+  });
+
+  return posts;
 };

@@ -11,6 +11,7 @@ export interface Post {
   userId: number;
   title: string;
   body: string;
+  date: string;
 }
 
 export interface AppState {

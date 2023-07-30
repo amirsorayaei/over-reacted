@@ -18,8 +18,8 @@ import {
   PostWrapper,
   Title,
 } from "@/src/assets/styles/Home.styled";
-import { generateDateById } from "@/src/helpers/Functions";
-import { useAppDispatch } from "@/src/redux/hooks";
+import { useAppDispatch, useAppSelector } from "@/src/redux/hooks";
+import { RootState } from "@/src/redux/store";
 
 /**
  * Home component
@@ -27,6 +27,8 @@ import { useAppDispatch } from "@/src/redux/hooks";
 const Home = () => {
   const { isLoading, isFetching, data, error } = useGetPostsQuery(null); // Fetch the posts from api service using RTK createApi
   const dispatch = useAppDispatch();
+
+  const posts = useAppSelector((state: RootState) => state.app.posts);
 
   /**
    * Setting posts to RTK when the data is available
@@ -60,7 +62,7 @@ const Home = () => {
   /**
    * Display data to user
    */
-  return data ? (
+  return posts ? (
     <div>
       {/** Author details */}
       <aside>
@@ -86,7 +88,7 @@ const Home = () => {
       </aside>
 
       {/** List of posts */}
-      {data.map((item) => (
+      {posts.map((item) => (
         <PostItem key={item.id} item={item} />
       ))}
     </div>
@@ -105,7 +107,7 @@ const PostItem = ({ item }: { item: Post }) => {
             <Title>{item.title}</Title>
           </Link>
         </h3>
-        <Date>{generateDateById(item.id)}</Date>
+        <Date>{item.date}</Date>
       </header>
       <Body>{item.body}</Body>
     </PostWrapper>
