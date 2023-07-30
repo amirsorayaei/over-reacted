@@ -79,8 +79,7 @@ const Home = () => {
           />
           <p>
             {"Personal blog by "}
-            <AuthorName href="www.google.com">{"Amir Sorayaei"}</AuthorName>.
-            {"\n"}
+            <AuthorName>{"Amir Sorayaei"}</AuthorName>.{"\n"}
             {"I explain with words and code."}
           </p>
         </AuthorWrapper>
